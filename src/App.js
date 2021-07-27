@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Login, Register, Newsfeed } from "./pages";
+import { useHistory } from "react-router-dom";
 
 function App() {
+  const history = useHistory();
   return (
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route exact path="/" component={Newsfeed} />
         <Route path="/login" component={Login} />
